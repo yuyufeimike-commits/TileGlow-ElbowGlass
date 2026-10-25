@@ -1,0 +1,9 @@
+id=tileglow
+name=磁贴发光 v5
+version=9.0
+versionCode=40
+author=TileGlow
+description=在 Elbow 液态玻璃层内整块加色提亮：形状取自 Elbow 每帧几何，加色混合不覆盖不外溢
+minApiVersion=101
+targetApiVersion=101
+staticScope=false

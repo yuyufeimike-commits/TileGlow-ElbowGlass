@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.elbowmod.tileglow"
+    android:versionCode="40"
+    android:versionName="9.0">
+
+    <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="35" />
+
+    <application
+        android:label="@string/app_name"
+        android:hasCode="true"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher">
+
+        <meta-data android:name="xposedmodule" android:value="true" />
+        <meta-data android:name="xposeddescription" android:value="@string/app_desc" />
+        <meta-data android:name="xposedminversion" android:value="101" />
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="true"
+            android:label="@string/settings_label">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
+            </intent-filter>
+        </activity>
+
+        <!--
+          备选配置通道（仅当 libXposed getRemotePreferences 不可用时才启用）。
+          只读、只暴露本模块自己的 UI 参数，不含用户数据。
+          systemui 无本模块的自定义签名权限，故必须 exported=true；
+          为降低暴露面，仅实现 call()，其余接口一律空实现。
+        -->
+        <provider
+            android:name=".ConfigProvider"
+            android:authorities="com.elbowmod.tileglow.config"
+            android:exported="true" />
+    </application>
+</manifest>

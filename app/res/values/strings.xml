@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">磁贴发光</string>
+    <string name="app_desc">磁贴轮廓发光 + 背景独立调节（独立 LSPosed 模块）</string>
+    <string name="settings_label">磁贴发光设置</string>
+</resources>
